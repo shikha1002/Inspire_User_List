@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>Add Book</h2>
+
+<mat-dialog-content [formGroup]="bookForm">
+    <!-- <form [formGroup]="bookForm" (submit)="save()"> -->
+
+    <!-- <mat-form-field>
+            <input #photo matInput formControlName="image">
+        </mat-form-field> -->
+
+    <img [src]="bookForm.get('image')?.value" height="200" width="350" >
+    <div>
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>Purchase Link</mat-label>
+            <input matInput formControlName="purchaseLink">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+            <mat-label>PublishDate</mat-label>
+            <input matInput type="date" placeholder="Title" formControlName="title">
+        </mat-form-field>
+    </div>
+    <!-- </form> -->
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button mat-primary" (click)="save()">Save</button>
+</mat-dialog-actions>
